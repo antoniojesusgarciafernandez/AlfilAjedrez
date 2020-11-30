@@ -74,7 +74,16 @@ public class MainApp {
 	}
 
 	private static char elegirColumnaInicial() {
-		return '0';
+		char columna;
+		System.out.println("Elige la columna");
+		do {
+			System.out.print("Introduzca la columna correcta: ");
+			columna = Entrada.caracter();
+
+		} while (columna <'a'  || columna >'h');
+
+		
+		return columna;
 	}
 
 	private static void mover() {
