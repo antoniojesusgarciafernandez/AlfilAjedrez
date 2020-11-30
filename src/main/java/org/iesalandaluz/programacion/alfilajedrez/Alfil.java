@@ -1,5 +1,7 @@
 package org.iesalandaluz.programacion.alfilajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Alfil {
 
 	private Color color;
@@ -58,6 +60,17 @@ public class Alfil {
 			System.err.println("ERROR: La posicion no es válida.");
 		}
 
+	}
+	
+	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
+		
+		if (pasos<0) {
+			throw new IllegalArgumentException("ERROR: El valor introducido en pasos es negativo.");
+			
+		}else if(pasos>=8) {
+			throw new OperationNotSupportedException("ERROR: El valor introducido en pasos se sale del tablero.");
+		}
+		
 	}
 
 }
