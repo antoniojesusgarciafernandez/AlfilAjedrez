@@ -53,6 +53,8 @@ public class MainApp {
 
 	private static Color elegirColor() {
 		String colorIntroducido;
+		Color color = null;
+		
 		System.out.println("Elige un color");
 		colorIntroducido = Entrada.cadena();
 		do {
@@ -66,7 +68,7 @@ public class MainApp {
 		} else if (colorIntroducido != "negro") {
 			return Color.NEGRO;
 		}
-
+		return color;
 	}
 
 	private static void crearAlfilColorColumna() {
@@ -99,6 +101,8 @@ public class MainApp {
 	}
 
 	private static Direccion elegirDireccion() {
+		
+		System.out.println("Elija una opcion");
 		return Direccion.ABAJO_DERECHA;
 	}
 }
