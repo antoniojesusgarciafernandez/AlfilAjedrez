@@ -5,6 +5,11 @@ public class Alfil {
 	private Color color;
 	private Posicion posicion;
 
+	public Alfil() {
+		this.color = Color.NEGRO;
+		this.posicion = new Posicion(8, 'f');
+	}
+
 	public Color getColor() {
 		return color;
 	}
@@ -28,7 +33,7 @@ public class Alfil {
 		} catch (NullPointerException | IllegalArgumentException e) {
 			System.err.println("ERROR: La posicion no es válida.");
 		}
-		
+
 	}
 
 }
