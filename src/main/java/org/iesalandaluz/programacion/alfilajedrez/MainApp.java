@@ -48,7 +48,7 @@ public class MainApp {
 	}
 
 	private static void crearAlfilColor() {
-
+		alfil = new Alfil(Color.BLANCO);
 	}
 
 	private static Color elegirColor() {
