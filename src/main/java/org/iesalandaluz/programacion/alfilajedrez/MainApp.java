@@ -21,10 +21,10 @@ public class MainApp {
 		alfil.toString();
 	}
 
-	private static void mostraMenu() {
+	private static void mostrarMenu() {
 		System.out.println("**** MENU ****");
-		System.out.println("Opción 1.");
-		System.out.println("Opción 2.");
+		System.out.println("Opción 1 mover.");
+		System.out.println("Opción 2 salir.");
 	}
 
 	private static int elegirOpcion() {
@@ -42,6 +42,20 @@ public class MainApp {
 	}
 
 	private static void ejecutarOpcion(int opcion) {
+		mostrarMenu();
+
+		opcion = Entrada.entero();
+		do {
+			System.out.print("Introduzca una opcion correcta: ");
+			opcion = Entrada.entero();
+
+		} while (opcion == 1 || opcion == 2);
+		if (opcion == 1) { 
+			mover();
+		} else { 
+			System.out.println("Ha salido de la aplicacion.");
+
+		}
 
 	}
 
@@ -98,14 +112,13 @@ public class MainApp {
 			pasos = Entrada.entero();
 
 		} while (pasos <= 1 || pasos >= 8);
-		
+
 		try {
 			alfil.mover(direccion, pasos);
 		} catch (OperationNotSupportedException e) {
 			e.getMessage();
 		}
-		
-		
+
 	}
 
 	private static void mostrarMenuDirecciones() {
@@ -120,7 +133,7 @@ public class MainApp {
 		int opcion;
 		Direccion direccion = null;
 		System.out.println("Elija una opcion");
-		
+
 		do {
 			System.out.print("Introduzca la columna correcta: ");
 			opcion = Entrada.caracter();
@@ -147,6 +160,5 @@ public class MainApp {
 			throw new IllegalArgumentException("Unexpected value: " + opcion);
 		}
 
-		
 	}
 }
