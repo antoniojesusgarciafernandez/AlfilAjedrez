@@ -26,8 +26,8 @@ public class Alfil {
 		if (columna != 'c' || columna != 'f') {
 			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		}
-		
-		this.color=color;
+
+		this.color = color;
 		if (color == Color.BLANCO) {
 			this.posicion = new Posicion(1, columna);
 		} else if (color == Color.NEGRO) {
@@ -61,16 +61,44 @@ public class Alfil {
 		}
 
 	}
-	
+
 	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
-		
-		if (pasos<0) {
+
+		if (pasos < 0) {
 			throw new IllegalArgumentException("ERROR: El valor introducido en pasos es negativo.");
-			
-		}else if(pasos>=8) {
+
+		} else if (pasos >= 8) {
 			throw new OperationNotSupportedException("ERROR: El valor introducido en pasos se sale del tablero.");
 		}
-		
+
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((color == null) ? 0 : color.hashCode());
+		result = prime * result + ((posicion == null) ? 0 : posicion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alfil other = (Alfil) obj;
+		if (color != other.color)
+			return false;
+		if (posicion == null) {
+			if (other.posicion != null)
+				return false;
+		} else if (!posicion.equals(other.posicion))
+			return false;
+		return true;
 	}
 
 }
