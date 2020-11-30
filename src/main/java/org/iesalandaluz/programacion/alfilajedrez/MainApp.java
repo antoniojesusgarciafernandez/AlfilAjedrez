@@ -72,7 +72,7 @@ public class MainApp {
 	}
 
 	private static void crearAlfilColorColumna() {
-
+		alfil = new Alfil(Color.BLANCO, 'f');
 	}
 
 	private static char elegirColumnaInicial() {
