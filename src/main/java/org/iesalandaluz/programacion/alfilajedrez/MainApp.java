@@ -54,7 +54,7 @@ public class MainApp {
 	private static Color elegirColor() {
 		String colorIntroducido;
 		Color color = null;
-		
+
 		System.out.println("Elige un color");
 		colorIntroducido = Entrada.cadena();
 		do {
@@ -82,9 +82,8 @@ public class MainApp {
 			System.out.print("Introduzca la columna correcta: ");
 			columna = Entrada.caracter();
 
-		} while (columna <'a'  || columna >'h');
+		} while (columna < 'a' || columna > 'h');
 
-		
 		return columna;
 	}
 
@@ -101,8 +100,36 @@ public class MainApp {
 	}
 
 	private static Direccion elegirDireccion() {
-		
+		int opcion;
+		Direccion direccion = null;
 		System.out.println("Elija una opcion");
-		return Direccion.ABAJO_DERECHA;
+		
+		do {
+			System.out.print("Introduzca la columna correcta: ");
+			opcion = Entrada.caracter();
+
+		} while (opcion < 0 || opcion > 5);
+
+		switch (opcion) {
+		case 1: {
+			return direccion.ARRIBA_DERECHA;
+		}
+		case 2: {
+
+			return direccion.ABAJO_DERECHA;
+		}
+		case 3: {
+
+			return direccion.ARRIBA_IZQUIERDA;
+		}
+		case 4: {
+
+			return direccion.ABAJO_IZQUIERDA;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + opcion);
+		}
+
+		
 	}
 }
