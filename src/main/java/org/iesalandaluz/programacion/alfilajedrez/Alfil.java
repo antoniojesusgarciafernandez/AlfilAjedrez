@@ -20,6 +20,20 @@ public class Alfil {
 
 	}
 
+	public Alfil(Color color, char columna) {
+		if (columna != 'c' || columna != 'f') {
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+		}
+		
+		this.color=color;
+		if (color == Color.BLANCO) {
+			this.posicion = new Posicion(1, columna);
+		} else if (color == Color.NEGRO) {
+			this.posicion = new Posicion(8, columna);
+		}
+
+	}
+
 	public Color getColor() {
 		return color;
 	}
