@@ -28,16 +28,15 @@ public class MainApp {
 	private static int elegirOpcion() {
 		int opcion;
 		System.out.println("Elige una opción");
-		opcion=Entrada.entero();
+		opcion = Entrada.entero();
 		do {
 			System.out.print("Introduzca una opcion correcta: ");
-			opcion=Entrada.entero();
-			
-		} while (opcion<1 || opcion>2);
-		
+			opcion = Entrada.entero();
+
+		} while (opcion < 1 || opcion > 2);
+
 		return opcion;
-		
-		
+
 	}
 
 	private static void ejecutarOpcion(int opcion) {
@@ -53,7 +52,21 @@ public class MainApp {
 	}
 
 	private static Color elegirColor() {
-		return Color.NEGRO;
+		String colorIntroducido;
+		System.out.println("Elige un color");
+		colorIntroducido = Entrada.cadena();
+		do {
+			System.out.print("Introduzca un color correcto: ");
+			colorIntroducido = Entrada.cadena();
+
+		} while (colorIntroducido != "blanco" || colorIntroducido != "negro");
+
+		if (colorIntroducido != "blanco") {
+			return Color.BLANCO;
+		} else if (colorIntroducido != "negro") {
+			return Color.NEGRO;
+		}
+
 	}
 
 	private static void crearAlfilColorColumna() {
