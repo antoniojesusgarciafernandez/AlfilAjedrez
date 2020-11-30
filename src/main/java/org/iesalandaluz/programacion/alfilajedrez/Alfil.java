@@ -10,6 +10,16 @@ public class Alfil {
 		this.posicion = new Posicion(8, 'f');
 	}
 
+	public Alfil(Color color) {
+		this.color = color;
+		if (color == Color.BLANCO) {
+			this.posicion = new Posicion(1, 'f');
+		} else if (color == Color.NEGRO) {
+			this.posicion = new Posicion(8, 'f');
+		}
+
+	}
+
 	public Color getColor() {
 		return color;
 	}
