@@ -1,5 +1,7 @@
 package org.iesalandaluz.programacion.alfilajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 public class MainApp {
 
 	private static Alfil alfil;
@@ -24,7 +26,18 @@ public class MainApp {
 	}
 
 	private static int elegirOpcion() {
-		return 0;
+		int opcion;
+		System.out.println("Elige una opción");
+		opcion=Entrada.entero();
+		do {
+			System.out.print("Introduzca una opcion correcta: ");
+			opcion=Entrada.entero();
+			
+		} while (opcion<1 || opcion>2);
+		
+		return opcion;
+		
+		
 	}
 
 	private static void ejecutarOpcion(int opcion) {
