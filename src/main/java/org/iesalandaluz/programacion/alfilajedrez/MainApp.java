@@ -16,7 +16,7 @@ public class MainApp {
 	}
 
 	private static void mostrarAlfil() {
-		alfil = new Alfil();
+		alfil.toString();
 	}
 
 	private static void mostraMenu() {
@@ -44,7 +44,7 @@ public class MainApp {
 	}
 
 	private static void crearAlfilDefecto() {
-
+		alfil = new Alfil();
 	}
 
 	private static void crearAlfilColor() {
