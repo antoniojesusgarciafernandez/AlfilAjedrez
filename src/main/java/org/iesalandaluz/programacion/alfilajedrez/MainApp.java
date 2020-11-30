@@ -1,5 +1,7 @@
 package org.iesalandaluz.programacion.alfilajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
@@ -88,7 +90,22 @@ public class MainApp {
 	}
 
 	private static void mover() {
+		int pasos;
+		mostrarMenuDirecciones();
+		Direccion direccion = elegirDireccion();
+		do {
+			System.out.print("Introduzca los pasos: ");
+			pasos = Entrada.entero();
 
+		} while (pasos <= 1 || pasos >= 8);
+		
+		try {
+			alfil.mover(direccion, pasos);
+		} catch (OperationNotSupportedException e) {
+			e.getMessage();
+		}
+		
+		
 	}
 
 	private static void mostrarMenuDirecciones() {
