@@ -91,7 +91,11 @@ public class MainApp {
 	}
 
 	private static void mostrarMenuDirecciones() {
-
+		System.out.println("**** MENU DIRECCION****");
+		System.out.println("Opción 1 ARRIBA_DERECHA.");
+		System.out.println("Opción 2 ABAJO_DERECHA.");
+		System.out.println("Opción 3 ARRIBA_IZQUIERDA.");
+		System.out.println("Opción 4 ABAJO_IZQUIERDA.");
 	}
 
 	private static Direccion elegirDireccion() {
